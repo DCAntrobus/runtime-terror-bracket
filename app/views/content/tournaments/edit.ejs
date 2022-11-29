@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1>
+                <%= title %>
+            </h1>
+
+            <form class="form" method="POST">
+                <input type="hidden" name="id" value="<%= tournament._id %>">
+                <div class="form-group">
+                    <label for="nameTextField">Tournament Title</label>
+                    <input type="text" class="form-control" id="nameTextField" placeholder="Enter the Tournament Name"
+                        name="name" value="<%= tournament.name %>" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="gameTextField">Description</label>
+                    <input type="text" class="form-control" id="gameTextField"
+                        placeholder="Enter the Tournament Description" name="description"
+                        value="<%= tournament.description %>" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="startDateField">Start Date</label>
+                    <input type="date" class="form-control" id="startDateField" placeholder="Enter the Start Date"
+                        name="startDate" value="<%= tournament.startDate %>" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="endDateField">End Date</label>
+                    <input type="date" class="form-control" id="endDateField" placeholder="Enter the End Date"
+                        name="endDate" value="<%= tournament.endDate %>" required>
+                    </input>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="sizeInputField">Enter list of teams</label>
+                    <input type="text" class="form-control" id="sizeInputField"
+                        placeholder="Enter the team(s) names, separated by comma." name="teams"
+                        value="<%= tournament.teams %>" required>
+                </div>
+                <button class="btn btn-dark" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+
+                <a href="/home" class="btn btn-danger">
+                    <i class="fas fa-undo"></i> Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
