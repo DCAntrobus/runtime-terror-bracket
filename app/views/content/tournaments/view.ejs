@@ -10,33 +10,36 @@
         <ul class="bracket-card bracket-1">
             <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                 <p class="teamId">
-                    <%= tournament.teams.split(',').reverse()[0] %>
-                </p>
-                <p class="score"><input type="number" id="team-score" name="score" min="0" max="99" placeholder="0
-                    ">
-                    - <input type="number" id="team-score" name="score" min="0" max="99" placeholder="0">
-                </p>
-                <p class="teamId">
-                    <%= tournament.teams.split(',').reverse()[1] %>
-                </p>
-            </li>
-            <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                <p class="teamId">
-                    <%= tournament.teams.split(',').reverse()[2] %>
+                    <%= tournament.teams.split(',')[0] %>
                 </p>
                 <p class="score">
-                <p class="score"><input type="number" id="team-score" name="score" min="0" max="99" placeholder="0
-                    ">
-                    - <input type="number" id="team-score" name="score" min="0" max="99" placeholder="0">
-                </p>
+                    <input type="number" id="team-score" name="score1" min="0" max="99" placeholder="0">
+                    - 
+                    <input type="number" id="team-score" name="score2" min="0" max="99" placeholder="0">
+                   
                 </p>
                 <p class="teamId">
-                    <%= tournament.teams.split(',').reverse()[3] %>
+                    <%= tournament.teams.split(',')[1] %>
                 </p>
             </li>
             <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                 <p class="teamId">
-                    <%= tournament.teams.split(',').reverse()[4] %>
+                    <%= tournament.teams.split(',')[2] %>
+                </p>
+                <p class="score">
+                <p class="score">
+                    <input type="number" id="team-score" name="score" min="0" max="99" placeholder="0">
+                    - 
+                    <input type="number" id="team-score" name="score" min="0" max="99" placeholder="0">
+                </p>
+                </p>
+                <p class="teamId">
+                    <%= tournament.teams.split(',')[3] %>
+                </p>
+            </li>
+            <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
+                <p class="teamId">
+                    <%= tournament.teams.split(',')[4] %>
                 </p>
                 <p class="score">
                 <p class="score"><input type="number" id="team-score" name="score" min="0" max="99" placeholder="0
@@ -45,57 +48,77 @@
                 </p>
                 </p>
                 <p class="teamId">
-
+                    <%= tournament.teams.split(',')[5] %>
                 </p>
             </li>
             <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                <p class="teamId">TBA</p>
+                <p class="teamId">
+                    <%= tournament.teams.split(',')[6] %>
+                </p>
                 <p class="score">
                 <p class="score"><input type="number" id="team-score" name="score" min="0" max="99" placeholder="0
                     ">
                     - <input type="number" id="team-score" name="score" min="0" max="99" placeholder="0">
                 </p>
                 </p>
-                <p class="teamId">TBA</p>
+                <p class="teamId">
+                    <%= tournament.teams.split(',')[7] %>
+                </p>
             </li>
             <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                <p class="teamId">TBA</p>
+                <p class="teamId">
+                    <%= tournament.teams.split(',')[8] %>
+                </p>
                 <p class="score">
                 <p class="score"><input type="number" id="team-score" name="score" min="0" max="99" placeholder="0
                     ">
                     - <input type="number" id="team-score" name="score" min="0" max="99" placeholder="0">
                 </p>
                 </p>
-                <p class="teamId">TBA</p>
+                <p class="teamId">
+                    <%= tournament.teams.split(',')[9] %>
+                </p>
             <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                <p class="teamId">TBA</p>
+                <p class="teamId">
+                    <%= tournament.teams.split(',')[10] %>
+                </p>
                 <p class="score">
                 <p class="score"><input type="number" id="team-score" name="score" min="0" max="99" placeholder="0
                     ">
                     - <input type="number" id="team-score" name="score" min="0" max="99" placeholder="0">
                 </p>
                 </p>
-                <p class="teamId">TBA</p>
+                <p class="teamId">
+                    <%= tournament.teams.split(',')[11] %>
+                </p>
             </li>
             <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                <p class="teamId">TBA</p>
+                <p class="teamId">
+                    <%= tournament.teams.split(',')[12] %>
+                </p>
                 <p class="score">
                 <p class="score"><input type="number" id="team-score" name="score" min="0" max="99" placeholder="0
                     ">
                     - <input type="number" id="team-score" name="score" min="0" max="99" placeholder="0">
                 </p>
                 </p>
-                <p class="teamId">TBA</p>
+                <p class="teamId">
+                    <%= tournament.teams.split(',')[13] %>
+                </p>
             </li>
             <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                <p class="teamId">TBA</p>
+                <p class="teamId">
+                    <%= tournament.teams.split(',')[14] %>
+                </p>
                 <p class="score">
                 <p class="score"><input type="number" id="team-score" name="score" min="0" max="99" placeholder="0
                     ">
                     - <input type="number" id="team-score" name="score" min="0" max="99" placeholder="0">
                 </p>
                 </p>
-                <p class="teamId">TBA</p>
+                <p class="teamId">
+                    <%= tournament.teams.split(',')[15] %>
+                </p>
             </li>
 
         </ul>
@@ -182,3 +205,23 @@
             </li>
         </ul>
     </div>
+</div>
+<script>
+ var teamOneScore = document.getElementsByName("score1")[0];
+ var teamTwoScore = document.getElementsByName("score2")[0];
+
+ teamOneScore.addEventListener("change", function() {
+    sessionStorage.setItem("lastScore1", teamOneScore.value);
+});
+teamTwoScore.addEventListener("change", function() {
+    sessionStorage.setItem("lastScore2", teamTwoScore.value);
+});
+
+window.onload = function() {
+    teamOneScore.value = sessionStorage.getItem("lastScore1");
+    teamTwoScore.value = sessionStorage.getItem("lastScore2");
+    
+}
+
+
+</script>
