@@ -1,5 +1,7 @@
 //importing models
+import team from '../models/team.js';
 import tournamentModel from '../models/tournament.js';
+import teamModel from '../models/team.js';
 
 // import DisplayName Utility method
 import { UserDisplayName, UserProfileType } from '../utils/index.js';
@@ -90,6 +92,21 @@ export function DisplayBracket(req, res, next){
             console.error(err);
             res.end(err);
         }
+        let teams = tournament.teams.split(",");
+        for (let index = 0; index < teams.length; ++index){
+            const teamName = teams[index];
+            let newTeam = teamModel({
+                name: teamName,
+                score: 0
+            });
+            teamModel.create(newTeam, (err, Team) => {
+                if (err){
+                    console.error(err);
+                    res.end(err);
+                }
+            })
+        }
+
         res.render('index', {title: 'View Bracket', page: 'tournaments/view', tournament: tournament, displayName: UserDisplayName(req)});
     })
 }
