@@ -35,6 +35,20 @@ export function ProcessTournamentAddPage(req, res, next){
             console.error(err);
             res.end(err);
         };
+        let teams = Tournament.teams.split(",");
+        for (let index = 0; index < teams.length; ++index){
+            const teamName = teams[index];
+            let newTeam = teamModel({
+                name: teamName,
+                score: 0
+            });
+            teamModel.create(newTeam, (err, team) => {
+                if (err){
+                    console.error(err);
+                    res.end(err);
+                }
+            })
+        }
         res.redirect('/tournament-list');
     })
 }
@@ -68,6 +82,7 @@ export function ProcessTournamentEditPage(req, res, next){
             console.error(err);
             res.end(err);
         };
+    
         res.redirect('/tournament-list');
     })
 }
@@ -92,21 +107,8 @@ export function DisplayBracket(req, res, next){
             console.error(err);
             res.end(err);
         }
-        let teams = tournament.teams.split(",");
-        for (let index = 0; index < teams.length; ++index){
-            const teamName = teams[index];
-            let newTeam = teamModel({
-                name: teamName,
-                score: 0
-            });
-            teamModel.create(newTeam, (err, Team) => {
-                if (err){
-                    console.error(err);
-                    res.end(err);
-                }
-            })
-        }
+       
 
-        res.render('index', {title: 'View Bracket', page: 'tournaments/view', tournament: tournament, displayName: UserDisplayName(req)});
+        res.render('index', {title: 'View Bracket', page: 'tournaments/view', tournament: tournament,  displayName: UserDisplayName(req)});
     })
 }
