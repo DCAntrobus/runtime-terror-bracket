@@ -138,17 +138,6 @@ export function ProcessTournamentDelete(req, res, next){
 export function DisplayBracket(req, res, next){
     let id = req.params.id;
 
-    // let teams = teamModel.collection;
-    // let teamCollection;
-    // for (let index = 0; index < teams.length; ++index){
-    //     if (teams[index].tournamentID = req.body.id){
-    //         teamCollection[index] = teams[index];
-    //     }
-    // }
-    
-    // teamModel.find(function (err, teamCollection){});
-    // let teams = tournamentModel.collection;
-
     tournamentModel.findById(id, (err, tournament) => {
         if(err){
             console.error(err);
@@ -162,9 +151,6 @@ export function DisplayBracket(req, res, next){
             }
             res.render('index', {title: 'View Bracket', page: 'tournaments/view', tournament: tournament, teams: teamCollection, displayName: UserDisplayName(req)});
         }).sort({ teamNumber: 1});
-        // let teams = teamModel.find({tournamentID: id});
-        // res.render('index', {title: 'View Bracket', page: 'tournaments/view', tournament: tournament, teams: teams, displayName: UserDisplayName(req)});
-
     })
 }
 

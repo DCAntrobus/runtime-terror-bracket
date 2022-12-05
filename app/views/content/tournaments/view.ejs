@@ -12,14 +12,13 @@
                 <p class="teamId">
                     <!-- <%= tournament.teams.split(',')[0] %> -->
                     <% if (teams.length > 0){ %>
-                        <%= teams[0].name %>
+                        <%= teams[0].name%>
                      <% } %>
                 </p>
                 <p class="score">
-                    <input type="number" id="team-score" name="score1" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score1" min="0" max="99" placeholder="0" value= <% if (teams.length > 0){ %><%= teams[0].score %><% } %>>
                     - 
-                    <input type="number" id="team-score" name="score2" min="0" max="99" placeholder="0">
-                   
+                    <input type="number" id="team-score" name="score2" min="0" max="99" placeholder="0" value=<% if (teams.length > 1){ %><%= teams[1].score %><% } %>>
                 </p>
                 <p class="teamId">
                     <!-- <%= tournament.teams.split(',')[1] %> -->
@@ -37,9 +36,9 @@
                 </p>
                 <p class="score">
                 <p class="score">
-                    <input type="number" id="team-score" name="score3" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score3" min="0" max="99" placeholder="0" value= <% if (teams.length > 2){ %><%= teams[2].score %><% } %>> 
                     - 
-                    <input type="number" id="team-score" name="score4" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score4" min="0" max="99" placeholder="0" value= <% if (teams.length > 3){ %><%= teams[3].score %><% } %>>
                 </p>
                 </p>
                 <p class="teamId">
@@ -58,9 +57,9 @@
                 </p>
                 <p class="score">
                 <p class="score">
-                    <input type="number" id="team-score" name="score5" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score5" min="0" max="99" placeholder="0" value= <% if (teams.length > 4){ %><%= teams[4].score %><% } %>>
                     - 
-                    <input type="number" id="team-score" name="score6" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score6" min="0" max="99" placeholder="0" value= <% if (teams.length > 5){ %><%= teams[5].score %><% } %>>
                 </p>
                 </p>
                 <p class="teamId">
@@ -79,9 +78,9 @@
                 </p>
                 <p class="score">
                 <p class="score">
-                    <input type="number" id="team-score" name="score7" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score7" min="0" max="99" placeholder="0" value= <% if (teams.length > 6){ %><%= teams[6].score %><% } %>>
                     -
-                    <input type="number" id="team-score" name="score8" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score8" min="0" max="99" placeholder="0" value= <% if (teams.length > 7){ %><%= teams[7].score %><% } %>>
                 </p>
                 </p>
                 <p class="teamId">
@@ -100,9 +99,9 @@
                 </p>
                 <p class="score">
                 <p class="score">
-                    <input type="number" id="team-score" name="score9" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score9" min="0" max="99" placeholder="0" value= <% if (teams.length > 8){ %><%= teams[8].score %><% } %>>
                     - 
-                    <input type="number" id="team-score" name="score10" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score10" min="0" max="99" placeholder="0" value= <% if (teams.length > 9){ %><%= teams[9].score %><% } %>>
                 </p>
                 </p>
                 <p class="teamId">
@@ -120,9 +119,9 @@
                 </p>
                 <p class="score">
                 <p class="score">
-                    <input type="number" id="team-score" name="score11" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score11" min="0" max="99" placeholder="0" value= <% if (teams.length > 10){ %><%= teams[10].score %><% } %>>
                     - 
-                    <input type="number" id="team-score" name="score12" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score12" min="0" max="99" placeholder="0" value= <% if (teams.length > 11){ %><%= teams[11].score %><% } %>>
                 </p>
                 </p>
                 <p class="teamId">
@@ -141,9 +140,9 @@
                 </p>
                 <p class="score">
                 <p class="score">
-                    <input type="number" id="team-score" name="score13" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score13" min="0" max="99" placeholder="0" value= <% if (teams.length > 12){ %><%= teams[12].score %><% } %>>
                     - 
-                    <input type="number" id="team-score" name="score14" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score14" min="0" max="99" placeholder="0" value= <% if (teams.length > 13){ %><%= teams[13].score %><% } %>>
                 </p>
                 </p>
                 <p class="teamId">
@@ -162,9 +161,9 @@
                 </p>
                 <p class="score">
                 <p class="score">
-                    <input type="number" id="team-score" name="score15" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score15" min="0" max="99" placeholder="0" value= <% if (teams.length > 14){ %><%= teams[14].score %><% } %>>
                     - 
-                    <input type="number" id="team-score" name="score16" min="0" max="99" placeholder="0">
+                    <input type="number" id="team-score" name="score16" min="0" max="99" placeholder="0" value= <% if (teams.length > 15){ %><%= teams[15].score %><% } %>>
                 </p>
                 </p>
                 <p class="teamId">
@@ -261,92 +260,7 @@
     </div>
 </div>
 <script>
-//  var team1Score = document.getElementsByName("score1")[0];
-//  var team2Score = document.getElementsByName("score2")[0];
-//  var team3Score = document.getElementsByName("score3")[0];
-//  var team4Score = document.getElementsByName("score4")[0];
-//  var team5Score = document.getElementsByName("score5")[0];
-//  var team6Score = document.getElementsByName("score6")[0];
-//  var team7Score = document.getElementsByName("score7")[0];
-//  var team8Score = document.getElementsByName("score8")[0];
-//  var team9Score = document.getElementsByName("score9")[0];
-//  var team10Score = document.getElementsByName("score10")[0];
-//  var team11Score = document.getElementsByName("score11")[0];
-//  var team12Score = document.getElementsByName("score12")[0];
-//  var team13Score = document.getElementsByName("score13")[0];
-//  var team14Score = document.getElementsByName("score14")[0];
-//  var team15Score = document.getElementsByName("score15")[0];
-//  var team16Score = document.getElementsByName("score16")[0];
-
-
-//  team1Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore1", team1Score.value);
-// });
-// team2Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore2", team2Score.value);
-// });
-// team3Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore3", team3Score.value);
-// });
-// team4Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore4", team4Score.value);
-// });
-// team5Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore5", team5Score.value);
-// });
-// team6Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore6", team6Score.value);
-// });
-// team7Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore7", team7Score.value);
-// });
-// team8Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore8", team8Score.value);
-// });
-// team9Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore9", team9Score.value);
-// });
-// team10Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore10", team10Score.value);
-// });
-// team11Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore11", team11Score.value);
-// });
-// team12Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore12", team12Score.value);
-// });
-// team13Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore13", team13Score.value);
-// });
-// team14Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore14", team14Score.value);
-// });
-// team15Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore15", team15Score.value);
-// });
-// team16Score.addEventListener("change", function() {
-//     sessionStorage.setItem("lastScore16", team16Score.value);
-// });
-
-// window.onload = function() {
-//     team1Score.value = sessionStorage.getItem("lastScore1");
-//     team2Score.value = sessionStorage.getItem("lastScore2");
-//     team3Score.value = sessionStorage.getItem("lastScore3");
-//     team4Score.value = sessionStorage.getItem("lastScore4");
-//     team5Score.value = sessionStorage.getItem("lastScore5");
-//     team6Score.value = sessionStorage.getItem("lastScore6");
-//     team7Score.value = sessionStorage.getItem("lastScore7");
-//     team8Score.value = sessionStorage.getItem("lastScore8");
-//     team9Score.value = sessionStorage.getItem("lastScore9");
-//     team10Score.value = sessionStorage.getItem("lastScore10");
-//     team11Score.value = sessionStorage.getItem("lastScore11");
-//     team12Score.value = sessionStorage.getItem("lastScore12");
-//     team13Score.value = sessionStorage.getItem("lastScore13");
-//     team14Score.value = sessionStorage.getItem("lastScore14");
-//     team15Score.value = sessionStorage.getItem("lastScore15");
-//     team16Score.value = sessionStorage.getItem("lastScore16");
-    
-// }
-
-
+    function scoreFunction() {
+        
+    }
 </script>
