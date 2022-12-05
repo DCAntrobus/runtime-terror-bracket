@@ -40,6 +40,8 @@ export function ProcessTournamentAddPage(req, res, next){
             const teamName = teams[index];
             let newTeam = teamModel({
                 name: teamName,
+                teamNumber: index + 1,
+                tournamentID: Tournament._id,
                 score: 0
             });
             teamModel.create(newTeam, (err, team) => {
@@ -67,6 +69,13 @@ export function DisplayTournamentEditPage(req, res, next){
 
 export function ProcessTournamentEditPage(req, res, next){
     let id = req.params.id;
+
+    teamModel.remove({tournamentID: id}, (err) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        }
+    })
     
     let newTournament = tournamentModel({
         _id: req.body.id,
@@ -77,18 +86,45 @@ export function ProcessTournamentEditPage(req, res, next){
         teams: req.body.teams
     });
 
+    let teams = req.body.teams.split(",");
+        for (let index = 0; index < teams.length; ++index){
+            const teamName = teams[index];
+            let newTeam = teamModel({
+                name: teamName,
+                teamNumber: index + 1,
+                tournamentID: req.body.id,
+                score: 0
+            });
+            teamModel.create(newTeam, (err, team) => {
+                if (err){
+                    console.error(err);
+                    res.end(err);
+                }
+            })
+        }
+
     tournamentModel.updateOne({_id: id}, newTournament, (err, Tournament) => {
         if (err){
             console.error(err);
             res.end(err);
         };
-    
         res.redirect('/tournament-list');
     })
+
+
+
 }
 
 export function ProcessTournamentDelete(req, res, next){
     let id = req.params.id;
+    
+
+    teamModel.remove({tournamentID: id}, (err) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        }
+    })
     
     tournamentModel.remove({_id: id}, (err) => {
         if (err){
@@ -107,8 +143,7 @@ export function DisplayBracket(req, res, next){
             console.error(err);
             res.end(err);
         }
-       
 
-        res.render('index', {title: 'View Bracket', page: 'tournaments/view', tournament: tournament,  displayName: UserDisplayName(req)});
+        res.render('index', {title: 'View Bracket', page: 'tournaments/view', tournament: tournament, displayName: UserDisplayName(req)});
     })
 }

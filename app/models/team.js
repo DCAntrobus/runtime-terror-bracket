@@ -4,6 +4,8 @@ const Scheme = mongoose.Schema;
 
 const teamSchema = new Schema({
     name: String,
+    teamNumber: Number,
+    tournamentID: String,
     score: Number
 }, {
     timestamps: true,
