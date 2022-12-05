@@ -18,7 +18,7 @@ export function DisplayTournamentList(req, res, next){
 }
 
 export function DisplayTournamentAddPage(req, res, next){
-    res.render('index', {title: 'Add Tournament', page: 'tournaments/edit', tournament: {}, displayName: UserDisplayName(req)});
+    res.render('index', {title: 'Add Tournament', page: 'tournaments/edit', tournament: {}, team: {}, displayName: UserDisplayName(req)});
 }
 
 export function ProcessTournamentAddPage(req, res, next){
@@ -138,12 +138,33 @@ export function ProcessTournamentDelete(req, res, next){
 export function DisplayBracket(req, res, next){
     let id = req.params.id;
 
+    // let teams = teamModel.collection;
+    // let teamCollection;
+    // for (let index = 0; index < teams.length; ++index){
+    //     if (teams[index].tournamentID = req.body.id){
+    //         teamCollection[index] = teams[index];
+    //     }
+    // }
+    
+    // teamModel.find(function (err, teamCollection){});
+    // let teams = tournamentModel.collection;
+
     tournamentModel.findById(id, (err, tournament) => {
         if(err){
             console.error(err);
             res.end(err);
         }
+      
+        teamModel.find({tournamentID: id}, function(err, teamCollection){
+            if(err){
+                console.error(err);
+                res.end(err);
+            }
+            res.render('index', {title: 'View Bracket', page: 'tournaments/view', tournament: tournament, teams: teamCollection, displayName: UserDisplayName(req)});
+        }).sort({ teamNumber: 1});
+        // let teams = teamModel.find({tournamentID: id});
+        // res.render('index', {title: 'View Bracket', page: 'tournaments/view', tournament: tournament, teams: teams, displayName: UserDisplayName(req)});
 
-        res.render('index', {title: 'View Bracket', page: 'tournaments/view', tournament: tournament, displayName: UserDisplayName(req)});
     })
 }
+
