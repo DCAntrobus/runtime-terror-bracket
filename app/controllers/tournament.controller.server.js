@@ -483,6 +483,7 @@ export function DisplayBracket(req, res, next){
 export function SubmitR16Result(req, res, next){
     let id = req.params.id;
 
+
     let team1 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 1}, {scoreR16: req.body.score1});
     teamModel.updateOne({tournamentID: id, teamNumber: 1}, team1, (err, Team) => {
         if (err){
@@ -499,7 +500,117 @@ export function SubmitR16Result(req, res, next){
         };
     })
 
-    
-    res.redirect('/tournament-view/'+id);
+    let team3 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 3}, {scoreR16: req.body.score3});
+    teamModel.updateOne({tournamentID: id, teamNumber: 3}, team3, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
 
+    let team4 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 2}, {scoreR16: req.body.score4});
+    teamModel.updateOne({tournamentID: id, teamNumber: 4}, team4, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team5 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 5}, {scoreR16: req.body.score5});
+    teamModel.updateOne({tournamentID: id, teamNumber: 5}, team5, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team6 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 6}, {scoreR16: req.body.score6});
+    teamModel.updateOne({tournamentID: id, teamNumber: 6}, team6, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team7 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 7}, {scoreR16: req.body.score7});
+    teamModel.updateOne({tournamentID: id, teamNumber: 7}, team7, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team8 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 8}, {scoreR16: req.body.score8});
+    teamModel.updateOne({tournamentID: id, teamNumber: 8}, team8, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team9 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 9}, {scoreR16: req.body.score9});
+    teamModel.updateOne({tournamentID: id, teamNumber: 9}, team9, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team10 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 10}, {scoreR16: req.body.score10});
+    teamModel.updateOne({tournamentID: id, teamNumber: 10}, team10, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team11 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 11}, {scoreR16: req.body.score11});
+    teamModel.updateOne({tournamentID: id, teamNumber: 11}, team11, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team12 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 12}, {scoreR16: req.body.score12});
+    teamModel.updateOne({tournamentID: id, teamNumber: 12}, team12, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team13 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 13}, {scoreR16: req.body.score13});
+    teamModel.updateOne({tournamentID: id, teamNumber: 13}, team13, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team14 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 14}, {scoreR16: req.body.score14});
+    teamModel.updateOne({tournamentID: id, teamNumber: 14}, team14, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team15 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 15}, {scoreR16: req.body.score15});
+    teamModel.updateOne({tournamentID: id, teamNumber: 15}, team15, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team16 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 16}, {scoreR16: req.body.score16});
+    teamModel.updateOne({tournamentID: id, teamNumber: 16}, team16, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+    res.redirect('/tournament-view/'+id);
+    
 }
