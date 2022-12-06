@@ -16,7 +16,7 @@
                         <th scope="col">Description</th>
                         <th scope="col">Start Date</th>
                         <th scope="col">End Date</th>
-                        <th scope="col">Teams/Participants</th>
+                        <!-- <th scope="col">Teams/Participants</th> -->
                         <% if(displayName) { %>
                         <th scope="col" class="text-center">View</th>
                             <% if(profileType == "Owner") { %>
@@ -45,9 +45,9 @@
                             <td>
                                 <%= tournaments[count].endDate %>
                             </td>
-                            <td>
+                            <!-- <td>
                                 <%= tournaments[count].teams %>
-                            </td>
+                            </td> -->
 
                             <% if(displayName) { %> 
                             <td class="text-center col-1">

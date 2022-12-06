@@ -12,6 +12,5 @@ const teamSchema = new Schema({
     collection: 'teams'
 });
 
-
 export default mongoose.model('Team', teamSchema);
 
