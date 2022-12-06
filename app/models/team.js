@@ -6,7 +6,10 @@ const teamSchema = new Schema({
     name: String,
     teamNumber: Number,
     tournamentID: String,
-    score: Number
+    scoreR16: Number,
+    scoreQF: Number,
+    scoreSF: Number,
+    scoreFinal: Number
 }, {
     timestamps: true,
     collection: 'teams'

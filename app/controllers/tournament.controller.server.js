@@ -57,7 +57,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team1,
             teamNumber: 1,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team1, (err, team) => {
             if (err){
@@ -70,7 +70,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team2,
             teamNumber: 2,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team2, (err, team) => {
             if (err){
@@ -83,7 +83,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team3,
             teamNumber: 3,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team3, (err, team) => {
             if (err){
@@ -96,7 +96,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team4,
             teamNumber: 4,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team4, (err, team) => {
             if (err){
@@ -109,7 +109,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team5,
             teamNumber: 5,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team5, (err, team) => {
             if (err){
@@ -122,7 +122,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team6,
             teamNumber: 6,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team6, (err, team) => {
             if (err){
@@ -135,7 +135,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team7,
             teamNumber: 7,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team7, (err, team) => {
             if (err){
@@ -148,7 +148,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team8,
             teamNumber: 8,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team8, (err, team) => {
             if (err){
@@ -161,7 +161,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team9,
             teamNumber: 9,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team9, (err, team) => {
             if (err){
@@ -174,7 +174,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team10,
             teamNumber: 10,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team10, (err, team) => {
             if (err){
@@ -187,7 +187,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team11,
             teamNumber: 11,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team11, (err, team) => {
             if (err){
@@ -200,7 +200,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team12,
             teamNumber: 12,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team12, (err, team) => {
             if (err){
@@ -213,7 +213,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team13,
             teamNumber: 13,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team13, (err, team) => {
             if (err){
@@ -226,7 +226,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team14,
             teamNumber: 14,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team14, (err, team) => {
             if (err){
@@ -239,7 +239,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team15,
             teamNumber: 15,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team15, (err, team) => {
             if (err){
@@ -252,7 +252,7 @@ export function ProcessTournamentAddPage(req, res, next){
             name: req.body.team16,
             teamNumber: 16,
             tournamentID: Tournament._id,
-            score: 0
+            scoreR16: 0
         });
         teamModel.create(team16, (err, team) => {
             if (err){
