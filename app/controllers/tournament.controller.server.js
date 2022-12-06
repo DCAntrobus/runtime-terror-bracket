@@ -8,21 +8,21 @@ import { UserDisplayName, UserProfileType } from '../utils/index.js';
 import { resolveInclude } from 'ejs';
 
 //rendering pages for tournaments pages
-export function DisplayTournamentList(req, res, next){
-    tournamentModel.find(function(err, tournamentCollection){
-        if(err){
+export function DisplayTournamentList(req, res, next) {
+    tournamentModel.find(function (err, tournamentCollection) {
+        if (err) {
             console.error(err);
             res.end(err);
         }
-        res.render('index', {title: 'Tournament List', page: 'tournaments/list', tournaments: tournamentCollection, displayName: UserDisplayName(req), profileType: UserProfileType(req) });
+        res.render('index', { title: 'Tournament List', page: 'tournaments/list', tournaments: tournamentCollection, displayName: UserDisplayName(req), profileType: UserProfileType(req) });
     })
 }
 
-export function DisplayTournamentAddPage(req, res, next){
-    res.render('index', {title: 'Add Tournament', page: 'tournaments/edit', tournament: {}, team: {}, displayName: UserDisplayName(req)});
+export function DisplayTournamentAddPage(req, res, next) {
+    res.render('index', { title: 'Add Tournament', page: 'tournaments/edit', tournament: {}, team: {}, displayName: UserDisplayName(req) });
 }
 
-export function ProcessTournamentAddPage(req, res, next){
+export function ProcessTournamentAddPage(req, res, next) {
     let newTournament = tournamentModel({
         name: req.body.name,
         description: req.body.description,
@@ -48,11 +48,11 @@ export function ProcessTournamentAddPage(req, res, next){
     });
 
     tournamentModel.create(newTournament, (err, Tournament) => {
-        if(err){
+        if (err) {
             console.error(err);
             res.end(err);
         };
- 
+
         let team1 = teamModel({
             name: req.body.team1,
             teamNumber: 1,
@@ -60,7 +60,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team1, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -73,7 +73,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team2, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -86,7 +86,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team3, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -99,7 +99,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team4, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -112,7 +112,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team5, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -125,7 +125,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team6, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -138,7 +138,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team7, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -151,7 +151,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team8, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -164,7 +164,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team9, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -177,7 +177,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team10, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -190,7 +190,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team11, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -203,7 +203,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team12, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -216,7 +216,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team13, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -229,7 +229,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team14, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -242,7 +242,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team15, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -255,7 +255,7 @@ export function ProcessTournamentAddPage(req, res, next){
             scoreR16: 0
         });
         teamModel.create(team16, (err, team) => {
-            if (err){
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
@@ -264,21 +264,21 @@ export function ProcessTournamentAddPage(req, res, next){
     })
 }
 
-export function DisplayTournamentEditPage(req, res, next){
+export function DisplayTournamentEditPage(req, res, next) {
     let id = req.params.id;
 
     tournamentModel.findById(id, (err, tournament) => {
-        if(err){
+        if (err) {
             console.error(err);
             res.end(err);
         }
-        res.render('index', {title: 'Edit Tournament', page: 'tournaments/edit', tournament: tournament, displayName: UserDisplayName(req)});
+        res.render('index', { title: 'Edit Tournament', page: 'tournaments/edit', tournament: tournament, displayName: UserDisplayName(req) });
     })
 }
 
-export function ProcessTournamentEditPage(req, res, next){
+export function ProcessTournamentEditPage(req, res, next) {
     let id = req.params.id;
-    
+
     let newTournament = tournamentModel({
         _id: req.body.id,
         name: req.body.name,
@@ -304,136 +304,136 @@ export function ProcessTournamentEditPage(req, res, next){
     });
 
 
-    let team1 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 1}, {name: req.body.team1});
-    teamModel.updateOne({tournamentID: id, teamNumber: 1}, team1, (err, Team) => {
-        if (err){
+    let team1 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 1 }, { name: req.body.team1 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 1 }, team1, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team2 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 2}, {name: req.body.team2});
-    teamModel.updateOne({tournamentID: id, teamNumber: 2}, team2, (err, Team) => {
-        if (err){
+    let team2 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 2 }, { name: req.body.team2 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 2 }, team2, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team3 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 3}, {name: req.body.team3});
-    teamModel.updateOne({tournamentID: id, teamNumber: 3}, team3, (err, Team) => {
-        if (err){
+    let team3 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 3 }, { name: req.body.team3 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 3 }, team3, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team4 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 4}, {name: req.body.team4});
-    teamModel.updateOne({tournamentID: id, teamNumber: 4}, team4, (err, Team) => {
-        if (err){
+    let team4 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 4 }, { name: req.body.team4 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 4 }, team4, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team5 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 5}, {name: req.body.team5});
-    teamModel.updateOne({tournamentID: id, teamNumber: 5}, team5, (err, Team) => {
-        if (err){
+    let team5 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 5 }, { name: req.body.team5 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 5 }, team5, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team6 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 6}, {name: req.body.team6});
-    teamModel.updateOne({tournamentID: id, teamNumber: 6}, team6, (err, Team) => {
-        if (err){
+    let team6 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 6 }, { name: req.body.team6 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 6 }, team6, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team7 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 7}, {name: req.body.team7});
-    teamModel.updateOne({tournamentID: id, teamNumber: 7}, team7, (err, Team) => {
-        if (err){
+    let team7 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 7 }, { name: req.body.team7 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 7 }, team7, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team8 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 8}, {name: req.body.team8});
-    teamModel.updateOne({tournamentID: id, teamNumber: 8}, team8, (err, Team) => {
-        if (err){
+    let team8 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 8 }, { name: req.body.team8 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 8 }, team8, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team9 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 9}, {name: req.body.team9});
-    teamModel.updateOne({tournamentID: id, teamNumber: 9}, team9, (err, Team) => {
-        if (err){
+    let team9 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 9 }, { name: req.body.team9 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 9 }, team9, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team10 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 10}, {name: req.body.team10});
-    teamModel.updateOne({tournamentID: id, teamNumber: 10}, team10, (err, Team) => {
-        if (err){
+    let team10 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 10 }, { name: req.body.team10 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 10 }, team10, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team11 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 11}, {name: req.body.team11});
-    teamModel.updateOne({tournamentID: id, teamNumber: 11}, team11, (err, Team) => {
-        if (err){
+    let team11 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 11 }, { name: req.body.team11 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 11 }, team11, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team12 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 12}, {name: req.body.team12});
-    teamModel.updateOne({tournamentID: id, teamNumber: 12}, team12, (err, Team) => {
-        if (err){
+    let team12 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 12 }, { name: req.body.team12 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 12 }, team12, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team13 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 13}, {name: req.body.team13});
-    teamModel.updateOne({tournamentID: id, teamNumber: 13}, team13, (err, Team) => {
-        if (err){
+    let team13 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 13 }, { name: req.body.team13 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 13 }, team13, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team14 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 14}, {name: req.body.team14});
-    teamModel.updateOne({tournamentID: id, teamNumber: 14}, team14, (err, Team) => {
-        if (err){
+    let team14 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 14 }, { name: req.body.team14 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 14 }, team14, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team15 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 15}, {name: req.body.team15});
-    teamModel.updateOne({tournamentID: id, teamNumber: 15}, team15, (err, Team) => {
-        if (err){
+    let team15 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 15 }, { name: req.body.team15 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 15 }, team15, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team16 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 16}, {name: req.body.team16});
-    teamModel.updateOne({tournamentID: id, teamNumber: 16}, team16, (err, Team) => {
-        if (err){
+    let team16 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 16 }, { name: req.body.team16 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 16 }, team16, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
-   
-    tournamentModel.updateOne({_id: id}, newTournament, (err, Tournament) => {
-        if (err){
+
+    tournamentModel.updateOne({ _id: id }, newTournament, (err, Tournament) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
@@ -441,19 +441,19 @@ export function ProcessTournamentEditPage(req, res, next){
     })
 }
 
-export function ProcessTournamentDelete(req, res, next){
+export function ProcessTournamentDelete(req, res, next) {
     let id = req.params.id;
-    
 
-    teamModel.remove({tournamentID: id}, (err) => {
-        if (err){
+
+    teamModel.remove({ tournamentID: id }, (err) => {
+        if (err) {
             console.error(err);
             res.end(err);
         }
     })
-    
-    tournamentModel.remove({_id: id}, (err) => {
-        if (err){
+
+    tournamentModel.remove({ _id: id }, (err) => {
+        if (err) {
             console.error(err);
             res.end(err);
         }
@@ -461,156 +461,158 @@ export function ProcessTournamentDelete(req, res, next){
     })
 }
 
-export function DisplayBracket(req, res, next){
+export function DisplayBracket(req, res, next) {
     let id = req.params.id;
 
     tournamentModel.findById(id, (err, tournament) => {
-        if(err){
+        if (err) {
             console.error(err);
             res.end(err);
         }
-      
-        teamModel.find({tournamentID: id}, function(err, teamCollection){
-            if(err){
+
+        teamModel.find({ tournamentID: id }, function (err, teamCollection) {
+            if (err) {
                 console.error(err);
                 res.end(err);
             }
-            res.render('index', {title: 'View Bracket', page: 'tournaments/view', tournament: tournament, teams: teamCollection, displayName: UserDisplayName(req)});
-        }).sort({ teamNumber: 1});
+            res.render('index', { title: 'View Bracket', page: 'tournaments/view', tournament: tournament, teams: teamCollection, displayName: UserDisplayName(req) });
+        }).sort({ teamNumber: 1 });
     })
 }
 
-export function SubmitR16Result(req, res, next){
+export function SubmitR16Result(req, res, next) {
     let id = req.params.id;
 
 
-    let team1 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 1}, {scoreR16: req.body.score1});
-    teamModel.updateOne({tournamentID: id, teamNumber: 1}, team1, (err, Team) => {
-        if (err){
+    let team1 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 1 }, { scoreR16: req.body.score1 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 1 }, team1, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team2 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 2}, {scoreR16: req.body.score2});
-    teamModel.updateOne({tournamentID: id, teamNumber: 2}, team2, (err, Team) => {
-        if (err){
+    let team2 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 2 }, { scoreR16: req.body.score2 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 2 }, team2, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team3 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 3}, {scoreR16: req.body.score3});
-    teamModel.updateOne({tournamentID: id, teamNumber: 3}, team3, (err, Team) => {
-        if (err){
+    let team3 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 3 }, { scoreR16: req.body.score3 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 3 }, team3, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team4 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 2}, {scoreR16: req.body.score4});
-    teamModel.updateOne({tournamentID: id, teamNumber: 4}, team4, (err, Team) => {
-        if (err){
+    let team4 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 2 }, { scoreR16: req.body.score4 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 4 }, team4, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team5 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 5}, {scoreR16: req.body.score5});
-    teamModel.updateOne({tournamentID: id, teamNumber: 5}, team5, (err, Team) => {
-        if (err){
+    let team5 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 5 }, { scoreR16: req.body.score5 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 5 }, team5, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team6 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 6}, {scoreR16: req.body.score6});
-    teamModel.updateOne({tournamentID: id, teamNumber: 6}, team6, (err, Team) => {
-        if (err){
+    let team6 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 6 }, { scoreR16: req.body.score6 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 6 }, team6, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team7 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 7}, {scoreR16: req.body.score7});
-    teamModel.updateOne({tournamentID: id, teamNumber: 7}, team7, (err, Team) => {
-        if (err){
+    let team7 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 7 }, { scoreR16: req.body.score7 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 7 }, team7, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team8 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 8}, {scoreR16: req.body.score8});
-    teamModel.updateOne({tournamentID: id, teamNumber: 8}, team8, (err, Team) => {
-        if (err){
+    let team8 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 8 }, { scoreR16: req.body.score8 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 8 }, team8, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team9 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 9}, {scoreR16: req.body.score9});
-    teamModel.updateOne({tournamentID: id, teamNumber: 9}, team9, (err, Team) => {
-        if (err){
+    let team9 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 9 }, { scoreR16: req.body.score9 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 9 }, team9, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team10 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 10}, {scoreR16: req.body.score10});
-    teamModel.updateOne({tournamentID: id, teamNumber: 10}, team10, (err, Team) => {
-        if (err){
+    let team10 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 10 }, { scoreR16: req.body.score10 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 10 }, team10, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team11 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 11}, {scoreR16: req.body.score11});
-    teamModel.updateOne({tournamentID: id, teamNumber: 11}, team11, (err, Team) => {
-        if (err){
+    let team11 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 11 }, { scoreR16: req.body.score11 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 11 }, team11, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team12 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 12}, {scoreR16: req.body.score12});
-    teamModel.updateOne({tournamentID: id, teamNumber: 12}, team12, (err, Team) => {
-        if (err){
+    let team12 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 12 }, { scoreR16: req.body.score12 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 12 }, team12, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team13 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 13}, {scoreR16: req.body.score13});
-    teamModel.updateOne({tournamentID: id, teamNumber: 13}, team13, (err, Team) => {
-        if (err){
+    let team13 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 13 }, { scoreR16: req.body.score13 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 13 }, team13, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team14 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 14}, {scoreR16: req.body.score14});
-    teamModel.updateOne({tournamentID: id, teamNumber: 14}, team14, (err, Team) => {
-        if (err){
+    let team14 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 14 }, { scoreR16: req.body.score14 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 14 }, team14, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team15 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 15}, {scoreR16: req.body.score15});
-    teamModel.updateOne({tournamentID: id, teamNumber: 15}, team15, (err, Team) => {
-        if (err){
+    let team15 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 15 }, { scoreR16: req.body.score15 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 15 }, team15, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
 
-    let team16 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 16}, {scoreR16: req.body.score16});
-    teamModel.updateOne({tournamentID: id, teamNumber: 16}, team16, (err, Team) => {
-        if (err){
+    let team16 = teamModel.findOneAndUpdate({ tournamentID: id, teamNumber: 16 }, { scoreR16: req.body.score16 });
+    teamModel.updateOne({ tournamentID: id, teamNumber: 16 }, team16, (err, Team) => {
+        if (err) {
             console.error(err);
             res.end(err);
         };
     })
-    res.redirect('/tournament-view/'+id);
-    
+
+
+    res.redirect('/tournament-view/' + id);
+
 }

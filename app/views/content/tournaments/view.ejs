@@ -292,10 +292,10 @@
                     <p class="teamId" id="team1Final">TBA</p>
                     <p class="score">
                     <p class="score">
-                        <input type="number" id="team-score" name="score" min="0" max="99" placeholder="0"
+                        <input type="number" id="team-score" name="scoreFinal1" min="0" max="99" placeholder="0"
                             onchange="scoreFuntionFinals()">
                         -
-                        <input type="number" id="team-score" name="score" min="0" max="99" placeholder="0"
+                        <input type="number" id="team-score" name="scoreFinal2" min="0" max="99" placeholder="0"
                             onchange="scoreFuntionFinals()">
                     </p>
                     </p>
@@ -317,6 +317,7 @@
     var teamsSF = [];
     var teamsFinal = [];
     var teamChamp = [];
+
 
     function scoreFunction() {
         teamsQF = [];
@@ -445,7 +446,7 @@
         }
         else if (score16 > score15) {
             document.getElementById("team8QF").innerHTML = team16;
-            teamsQF[8] = team16;
+            teamsQF[7] = team16;
         }
         else {
             document.getElementById("team8QF").innerHTML = "TBA";
@@ -544,12 +545,12 @@
         if (score1 > score2) {
             document.getElementById("team2Final").innerHTML = team3;
             teamsFinal.push(team3);
-            ;
+
         }
         else if (score2 > score1) {
             document.getElementById("team2Final").innerHTML = team4;
             teamsFinal.push(team4);
-            ;
+
         }
         else {
             document.getElementById("team2Final").innerHTML = "TBA";
@@ -561,10 +562,10 @@
 
     function scoreFuntionFinals() {
         teamChamp = [];
-        var team1 = teamsSF[0];
-        var team2 = teamsSF[1];
-        var score1 = document.getElementsByName("scoreSF1")[0].value;
-        var score2 = document.getElementsByName("scoreSF2")[0].value;
+        var team1 = teamsFinal[0];
+        var team2 = teamsFinal[1];
+        var score1 = document.getElementsByName("scoreFinal1")[0].value;
+        var score2 = document.getElementsByName("scoreFinal2")[0].value;
         if (score1 > score2) {
             document.getElementById("teamWinner").innerHTML = team1;
             teamChamp.push(team1);
@@ -572,8 +573,6 @@
         else if (score2 > score1) {
             document.getElementById("teamWinner").innerHTML = team2;
             teamChamp.push(team2);
-
-
         }
     }
     window.onload = scoreFunction();
