@@ -1,9 +1,21 @@
 <div class="t-container">
     <div class="roundHeaders">
-        <h4 class="round-header">Round 16</h4>
-        <h4 class="round-header">Quarter-Finals</h4>
-        <h4 class="round-header">Semi-Finals</h4>
-        <h4 class="round-header">Finals</h4>
+        <h4 class="round-header">Round 16
+            <a href="/tournament-view/<%= tournament._id %>/submitR16" class="btn btn-light btn-sm">
+                <i class="fas fa-pencil-alt"></i> Submit Result</a>
+        </h4>
+        <h4 class="round-header">Quarter-Finals
+            <a href="/tournament-view/<%= tournament._id %>/submitQF" class="btn btn-light btn-sm">
+                <i class="fas fa-pencil-alt"></i> Submit Result</a>
+        </h4>
+        <h4 class="round-header">Semi-Finals
+            <a href="/tournament-view/<%= tournament._id %>/submitSF" class="btn btn-light btn-sm">
+                <i class="fas fa-pencil-alt"></i> Submit Result</a>
+        </h4>
+        <h4 class="round-header">Finals
+            <a href="/tournament-view/<%= tournament._id %>/submitFinal" class="btn btn-light btn-sm">
+                <i class="fas fa-pencil-alt"></i> Submit Result</a>
+        </h4>
         <h4 class="round-header">Champion</h4>
     </div>
     <div class="t-brackets">
@@ -121,7 +133,7 @@
                 <p class="score">
                     <input type="number" id="team-score" name="score11" min="0" max="99" placeholder="0" onchange="scoreFunction()" value=<%= teams[10].scoreR16 %>>
                     - 
-                    <input type="number" id="team-score" name="score12" min="0" max="99" placeholder="0" onchange="scoreFunction()" value=<%= teams[11].score %>>
+                    <input type="number" id="team-score" name="score12" min="0" max="99" placeholder="0" onchange="scoreFunction()" value=<%= teams[11].scoreR16 %>>
                 </p>
                 </p>
                 <p class="teamId">
@@ -140,9 +152,9 @@
                 </p>
                 <p class="score">
                 <p class="score">
-                    <input type="number" id="team-score" name="score13" min="0" max="99" placeholder="0" onchange="scoreFunction()" value=<%= teams[12].score %>>
+                    <input type="number" id="team-score" name="score13" min="0" max="99" placeholder="0" onchange="scoreFunction()" value=<%= teams[12].scoreR16 %>>
                     - 
-                    <input type="number" id="team-score" name="score14" min="0" max="99" placeholder="0" onchange="scoreFunction()" value=<%= teams[13].score %>>
+                    <input type="number" id="team-score" name="score14" min="0" max="99" placeholder="0" onchange="scoreFunction()" value=<%= teams[13].scoreR16 %>>
                 </p>
                 </p>
                 <p class="teamId">
@@ -161,9 +173,9 @@
                 </p>
                 <p class="score">
                 <p class="score">
-                    <input type="number" id="team-score" name="score15" min="0" max="99" placeholder="0" onchange="scoreFunction()" value=<%= teams[14].score %>>
+                    <input type="number" id="team-score" name="score15" min="0" max="99" placeholder="0" onchange="scoreFunction()" value=<%= teams[14].scoreR16 %>>
                     - 
-                    <input type="number" id="team-score" name="score16" min="0" max="99" placeholder="0" onchange="scoreFunction()" value=<%= teams[15].score %>>
+                    <input type="number" id="team-score" name="score16" min="0" max="99" placeholder="0" onchange="scoreFunction()" value=<%= teams[15].scoreR16 %>>
                 </p>
                 </p>
                 <p class="teamId">
