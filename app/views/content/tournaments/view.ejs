@@ -1,8 +1,9 @@
 <div class="t-container">
+    <form class="form" method="POST">
     <div class="roundHeaders">
         <h4 class="round-header">Round 16
-            <a href="/tournament-view/<%= tournament._id %>/submitR16" class="btn btn-light btn-sm">
-                <i class="fas fa-pencil-alt"></i> Submit Result</a>
+            <button class="btn btn-light" type="submit">
+                <i class="fas fa-edit"></i> Submit Result</button>
         </h4>
         <h4 class="round-header">Quarter-Finals
             <a href="/tournament-view/<%= tournament._id %>/submitQF" class="btn btn-light btn-sm">
@@ -19,6 +20,7 @@
         <h4 class="round-header">Champion</h4>
     </div>
     <div class="t-brackets">
+        
         <ul class="bracket-card bracket-1">
             <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                 <p class="teamId">
@@ -277,6 +279,7 @@
             </li>
         </ul>
     </div>
+</form>
 </div>
 <script>
     var teamsQF = [];

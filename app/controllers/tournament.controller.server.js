@@ -480,3 +480,26 @@ export function DisplayBracket(req, res, next){
     })
 }
 
+export function SubmitR16Result(req, res, next){
+    let id = req.params.id;
+
+    let team1 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 1}, {scoreR16: req.body.score1});
+    teamModel.updateOne({tournamentID: id, teamNumber: 1}, team1, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    let team2 = teamModel.findOneAndUpdate({tournamentID: id, teamNumber: 2}, {scoreR16: req.body.score2});
+    teamModel.updateOne({tournamentID: id, teamNumber: 2}, team2, (err, Team) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        };
+    })
+
+    
+    res.redirect('/tournament-view/'+id);
+
+}
