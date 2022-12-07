@@ -612,7 +612,14 @@ export function SubmitR16Result(req, res, next) {
         };
     })
 
-
     res.redirect('/tournament-view/' + id);
-
 }
+
+
+
+
+
+
+
+
+

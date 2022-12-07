@@ -1,7 +1,9 @@
 import { Router } from "express";
 
-import { DisplayTournamentList, DisplayTournamentAddPage, ProcessTournamentAddPage, DisplayTournamentEditPage, ProcessTournamentEditPage, ProcessTournamentDelete, DisplayBracket,
-SubmitR16Result } from "../controllers/tournament.controller.server.js";
+import {
+    DisplayTournamentList, DisplayTournamentAddPage, ProcessTournamentAddPage, DisplayTournamentEditPage, ProcessTournamentEditPage, ProcessTournamentDelete, DisplayBracket,
+    SubmitR16Result
+} from "../controllers/tournament.controller.server.js";
 
 import { AuthGuard } from "../utils/index.js";
 
@@ -16,5 +18,7 @@ router.post('/tournament-edit/:id', AuthGuard, ProcessTournamentEditPage);
 router.get('/tournament-delete/:id', AuthGuard, ProcessTournamentDelete);
 router.get('/tournament-view/:id', DisplayBracket);
 router.post('/tournament-view/:id', SubmitR16Result);
+
+// router.post('/tournament-view/QF/:id', SubmitQFResult);
 
 export default router;

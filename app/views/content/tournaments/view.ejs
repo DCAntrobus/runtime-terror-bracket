@@ -1,27 +1,29 @@
 <div class="t-container">
-    <form class="form" method="POST">
-        <div class="roundHeaders">
-            <h4 class="round-header">Round 16
-                <button class="btn btn-light" type="submit">
-                    <i class="fas fa-edit"></i> Submit Result</button>
-            </h4>
-            <h4 class="round-header">Quarter-Finals
-                <a href="/tournament-view/<%= tournament._id %>/submitQF" class="btn btn-light btn-sm">
-                    <i class="fas fa-pencil-alt"></i> Submit Result</a>
-            </h4>
-            <h4 class="round-header">Semi-Finals
-                <a href="/tournament-view/<%= tournament._id %>/submitSF" class="btn btn-light btn-sm">
-                    <i class="fas fa-pencil-alt"></i> Submit Result</a>
-            </h4>
-            <h4 class="round-header">Finals
-                <a href="/tournament-view/<%= tournament._id %>/submitFinal" class="btn btn-light btn-sm">
-                    <i class="fas fa-pencil-alt"></i> Submit Result</a>
-            </h4>
-            <h4 class="round-header">Champion</h4>
-        </div>
-        <div class="t-brackets">
+    <!-- <form class="form" method="POST"> -->
+    <div class="roundHeaders">
+        <h4 class="round-header">Round 16
+            <!-- <button class="btn btn-light" type="submit">
+                    <i class="fas fa-edit"></i> Submit Result</button> -->
+        </h4>
+        <h4 class="round-header">Quarter-Finals
+            <!-- <a href="/tournament-view/<%= tournament._id %>/submitQF" class="btn btn-light btn-sm">
+                <i class="fas fa-pencil-alt"></i> Submit Result</a> -->
+        </h4>
+        <h4 class="round-header">Semi-Finals
+            <!-- <a href="/tournament-view/<%= tournament._id %>/submitSF" class="btn btn-light btn-sm">
+                <i class="fas fa-pencil-alt"></i> Submit Result</a> -->
+        </h4>
+        <h4 class="round-header">Finals
+            <!-- <a href="/tournament-view/<%= tournament._id %>/submitFinal" class="btn btn-light btn-sm">
+                <i class="fas fa-pencil-alt"></i> Submit Result</a> -->
+        </h4>
+        <h4 class="round-header">Champion</h4>
+    </div>
 
-            <ul class="bracket-card bracket-1">
+
+    <div class="t-brackets">
+        <ul class="bracket-card bracket-1">
+            <form class="form" method="POST">
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId">
 
@@ -51,13 +53,11 @@
                                 <% } %>
                     </p>
                     <p class="score">
-                    <p class="score">
                         <input type="number" id="team-score" name="score3" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[2].scoreR16 %>>
                         -
                         <input type="number" id="team-score" name="score4" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[3].scoreR16 %>>
-                    </p>
                     </p>
                     <p class="teamId">
 
@@ -74,13 +74,11 @@
                                 <% } %>
                     </p>
                     <p class="score">
-                    <p class="score">
                         <input type="number" id="team-score" name="score5" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[4].scoreR16 %>>
                         -
                         <input type="number" id="team-score" name="score6" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[5].scoreR16 %>>
-                    </p>
                     </p>
                     <p class="teamId">
 
@@ -97,13 +95,11 @@
                                 <% } %>
                     </p>
                     <p class="score">
-                    <p class="score">
                         <input type="number" id="team-score" name="score7" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[6].scoreR16 %>>
                         -
                         <input type="number" id="team-score" name="score8" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[7].scoreR16 %>>
-                    </p>
                     </p>
                     <p class="teamId">
 
@@ -120,13 +116,11 @@
                                 <% } %>
                     </p>
                     <p class="score">
-                    <p class="score">
                         <input type="number" id="team-score" name="score9" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[8].scoreR16 %>>
                         -
                         <input type="number" id="team-score" name="score10" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[9].scoreR16 %>>
-                    </p>
                     </p>
                     <p class="teamId">
 
@@ -142,13 +136,11 @@
                                 <% } %>
                     </p>
                     <p class="score">
-                    <p class="score">
                         <input type="number" id="team-score" name="score11" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[10].scoreR16 %>>
                         -
                         <input type="number" id="team-score" name="score12" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[11].scoreR16 %>>
-                    </p>
                     </p>
                     <p class="teamId">
 
@@ -165,13 +157,11 @@
                                 <% } %>
                     </p>
                     <p class="score">
-                    <p class="score">
                         <input type="number" id="team-score" name="score13" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[12].scoreR16 %>>
                         -
                         <input type="number" id="team-score" name="score14" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[13].scoreR16 %>>
-                    </p>
                     </p>
                     <p class="teamId">
 
@@ -188,13 +178,11 @@
                                 <% } %>
                     </p>
                     <p class="score">
-                    <p class="score">
                         <input type="number" id="team-score" name="score15" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[14].scoreR16 %>>
                         -
                         <input type="number" id="team-score" name="score16" min="0" max="99" placeholder="0"
                             onchange="scoreFunction()" value=<%=teams[15].scoreR16 %>>
-                    </p>
                     </p>
                     <p class="teamId">
 
@@ -202,13 +190,13 @@
                             <%= teams[15].name %>
                                 <% } %>
                     </p>
-                </li>
 
-            </ul>
-            <ul class="bracket-card bracket-2">
+            </form>
+        </ul>
+        <ul class="bracket-card bracket-2">
+            <form class="formQF">
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="team1QF">TBA</p>
-                    <p class="score">
                     <p class="score">
                         <input type="number" id="team-score" name="scoreQF1" min="0" max="99" placeholder="0"
                             onchange="scoreFunctionQF()">
@@ -222,7 +210,6 @@
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="team3QF">TBA</p>
                     <p class="score">
-                    <p class="score">
                         <input type="number" id="team-score" name="scoreQF3" min="0" max="99" placeholder="0"
                             onchange="scoreFunctionQF()">
                         -
@@ -234,7 +221,6 @@
                 </li>
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="team5QF">TBA</p>
-                    <p class="score">
                     <p class="score">
                         <input type="number" id="team-score" name="scoreQF5" min="0" max="99" placeholder="0"
                             onchange="scoreFunctionQF()">
@@ -248,7 +234,6 @@
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="team7QF">TBA</p>
                     <p class="score">
-                    <p class="score">
                         <input type="number" id="team-score" name="scoreQF7" min="0" max="99" placeholder="0"
                             onchange="scoreFunctionQF()">
                         -
@@ -258,11 +243,14 @@
                     </p>
                     <p class="teamId" id="team8QF">TBA</p>
                 </li>
-            </ul>
-            <ul class="bracket-card bracket-3">
+
+            </form>
+        </ul>
+        <ul class="bracket-card bracket-3">
+            <form class="formSF" method="">
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
+
                     <p class="teamId" id="team1SF">TBA</p>
-                    <p class="score">
                     <p class="score">
                         <input type="number" id="team-score" name="scoreSF1" min="0" max="99" placeholder="0"
                             onchange="scoreFunctionSF()">
@@ -276,7 +264,6 @@
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="team3SF">TBA</p>
                     <p class="score">
-                    <p class="score">
                         <input type="number" id="team-score" name="scoreSF3" min="0" max="99" placeholder="0"
                             onchange="scoreFunctionSF()">
                         -
@@ -286,11 +273,14 @@
                     </p>
                     <p class="teamId" id="team4SF">TBA</p>
                 </li>
-            </ul>
-            <ul class="bracket-card bracket-4">
+
+            </form>
+        </ul>
+        <ul class="bracket-card bracket-4">
+            <form action="" class="formFinal">
+
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="team1Final">TBA</p>
-                    <p class="score">
                     <p class="score">
                         <input type="number" id="team-score" name="scoreFinal1" min="0" max="99" placeholder="0"
                             onchange="scoreFuntionFinals()">
@@ -301,15 +291,18 @@
                     </p>
                     <p class="teamId" id="team2Final">TBA</p>
                 </li>
-            </ul>
-            <ul class="bracket-card bracket-5">
+            </form>
+        </ul>
+        <ul class="bracket-card bracket-5">
+            <form action="" class="formChamp">
                 <li class="card text-white bg-warning mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="teamWinner">TBA</p>
 
                 </li>
-            </ul>
-        </div>
-    </form>
+
+            </form>
+        </ul>
+    </div>
 </div>
 <script>
 
