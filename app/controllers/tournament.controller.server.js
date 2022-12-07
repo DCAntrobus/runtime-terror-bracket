@@ -1,7 +1,6 @@
 //importing models
 import team from '../models/team.js';
 import tournamentModel from '../models/tournament.js';
-import teamModel from '../models/team.js';
 import scoreModel from '../models/score.js'
 
 // import DisplayName Utility method
@@ -54,19 +53,46 @@ export function ProcessTournamentAddPage(req, res, next) {
             res.end(err);
         };
 
-        for (let i = 0; i < 30; ++i){
-            let score = scoreModel({
-                scoreNumber: i+1,
-                tournamentID: Tournament._id,
-                score: 0
-            });
-            scoreModel.create(score, (err, team) => {
-                if (err){
-                    console.error(err);
-                    res.end(err);
-                }
-            })
-        }
+        let score = scoreModel({
+            tournamentID: Tournament._id,
+            score1: 0,
+            score2: 0,
+            score3: 0,
+            score4: 0,
+            score5: 0,
+            score6: 0,
+            score7: 0,
+            score8: 0,
+            score9: 0,
+            score10: 0,
+            score11: 0,
+            score12: 0,
+            score13: 0,
+            score14: 0,
+            score15: 0,
+            score16: 0,
+            score17: 0,
+            score18: 0,
+            score19: 0,
+            score20: 0,
+            score21: 0,
+            score22: 0,
+            score23: 0,
+            score24: 0,
+            score25: 0,
+            score26: 0,
+            score27: 0,
+            score28: 0,
+            score29: 0,
+            score30: 0
+        });
+        scoreModel.create(score, (err, team) => {
+            if (err){
+                console.error(err);
+                res.end(err)
+            }
+        })
+
         res.redirect('/tournament-list');
     })
 }
@@ -154,254 +180,52 @@ export function DisplayBracket(req, res, next) {
                 console.error(err);
                 res.end(err);
             }
-            res.render('index', { title: 'View Bracket', page: 'tournaments/view', tournament: tournament, scores: scoreCollection, displayName: UserDisplayName(req) });
-        }).sort({ scoreNumber: 1 });
+            res.render('index', { title: 'View Bracket', page: 'tournaments/view', tournament: tournament, score: scoreCollection, displayName: UserDisplayName(req) });
+        })
     })
 }
 
 export function SubmitR16Result(req, res, next) {
     let id = req.params.id;
 
-    let score1 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 1}, {score: req.body.score1});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 1}, score1, (err, Score) =>{
+    let score = scoreModel.findOneAndUpdate({tournamentID: id}, {
+        score1: req.body.score1,
+        score2: req.body.score2,
+        score3: req.body.score3,
+        score4: req.body.score4,
+        score5: req.body.score5,
+        score6: req.body.score6,
+        score7: req.body.score7,
+        score8: req.body.score8,
+        score9: req.body.score9,
+        score10: req.body.score10,
+        score11: req.body.score11,
+        score12: req.body.score12,
+        score13: req.body.score13,
+        score14: req.body.score14,
+        score15: req.body.score15,
+        score16: req.body.score16,
+        score17: req.body.scoreQF1,
+        score18: req.body.scoreQF2,
+        score19: req.body.scoreQF3,
+        score20: req.body.scoreQF4,
+        score21: req.body.scoreQF5,
+        score22: req.body.scoreQF6,
+        score23: req.body.scoreQF7,
+        score24: req.body.scoreQF8,
+        score25: req.body.scoreSF1,
+        score26: req.body.scoreSF2,
+        score27: req.body.scoreSF3,
+        score28: req.body.scoreSF4,
+        score29: req.body.scoreFinal1,
+        score30: req.body.scoreFinal2,
+    });
+    scoreModel.updateOne({tournamentID: id}, score, (err, Score) =>{
         if (err){
             console.err(err);
             res.end(err);
-        };
+        }
     })
-
-    let score2 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 2}, {score: req.body.score2});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 2}, score2, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score3 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 3}, {score: req.body.score3});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 3}, score3, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score4 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 4}, {score: req.body.score4});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 4}, score4, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score5 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 5}, {score: req.body.score5});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 5}, score5, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score6 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 6}, {score: req.body.score6});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 6}, score6, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score7 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 7}, {score: req.body.score7});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 7}, score7, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score8 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 8}, {score: req.body.score8});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 8}, score8, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score9 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 9}, {score: req.body.score9});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 9}, score9, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score10 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 10}, {score: req.body.score10});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 10}, score10, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score11 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 11}, {score: req.body.score11});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 11}, score11, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score12 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 12}, {score: req.body.score12});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 12}, score12, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score13 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 13}, {score: req.body.score13});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 13}, score13, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score14 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 14}, {score: req.body.score14});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 14}, score14, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score15 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 15}, {score: req.body.score15});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 15}, score15, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score16 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 16}, {score: req.body.score16});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 16}, score16, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score17 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 17}, {score: req.body.scoreQF1});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 17}, score17, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score18 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 18}, {score: req.body.scoreQF2});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 18}, score18, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score19 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 19}, {score: req.body.scoreQF3});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 19}, score19, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score20 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 20}, {score: req.body.scoreQF4});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 20}, score20, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score21 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 21}, {score: req.body.scoreQF5});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 21}, score21, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score22 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 22}, {score: req.body.scoreQF6});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 22}, score22, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score23 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 23}, {score: req.body.scoreQF7});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 23}, score23, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score24 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 24}, {score: req.body.scoreQF8});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 24}, score24, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score25 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 25}, {score: req.body.scoreSF1});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 25}, score25, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score26 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 26}, {score: req.body.scoreSF2});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 26}, score26, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score27 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 27}, {score: req.body.scoreSF3});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 27}, score27, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score28 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 28}, {score: req.body.scoreSF4});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 28}, score28, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score29 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 29}, {score: req.body.scoreFinal1});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 29}, score29, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
-    let score30 = scoreModel.findOneAndUpdate({ tournamentID: id, scoreNumber: 30}, {score: req.body.scoreFinal2});
-    scoreModel.updateOne({ tournamentID: id, scoreNumber: 30}, score30, (err, Score) =>{
-        if (err){
-            console.err(err);
-            res.end(err);
-        };
-    })
-
     res.redirect('/tournament-view/' + id);
 }
 

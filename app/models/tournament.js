@@ -23,7 +23,7 @@ const tournamentSchema = new Schema({
     team13: String,
     team14: String,
     team15: String,
-    team16: String,
+    team16: String
 }, {
     timestamps: true,
     collection: 'tournaments'
