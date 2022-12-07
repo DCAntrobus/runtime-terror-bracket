@@ -19,6 +19,7 @@ router.get('/tournament-delete/:id', AuthGuard, ProcessTournamentDelete);
 router.get('/tournament-view/:id', DisplayBracket);
 router.post('/tournament-view/:id', SubmitR16Result);
 
+
 // router.post('/tournament-view/QF/:id', SubmitQFResult);
 
 export default router;

@@ -1,210 +1,166 @@
 <div class="t-container">
-    <!-- <form class="form" method="POST"> -->
-    <div class="roundHeaders">
-        <h4 class="round-header">Round 16
-            <!-- <button class="btn btn-light" type="submit">
-                    <i class="fas fa-edit"></i> Submit Result</button> -->
-        </h4>
-        <h4 class="round-header">Quarter-Finals
-            <!-- <a href="/tournament-view/<%= tournament._id %>/submitQF" class="btn btn-light btn-sm">
-                <i class="fas fa-pencil-alt"></i> Submit Result</a> -->
-        </h4>
-        <h4 class="round-header">Semi-Finals
-            <!-- <a href="/tournament-view/<%= tournament._id %>/submitSF" class="btn btn-light btn-sm">
-                <i class="fas fa-pencil-alt"></i> Submit Result</a> -->
-        </h4>
-        <h4 class="round-header">Finals
-            <!-- <a href="/tournament-view/<%= tournament._id %>/submitFinal" class="btn btn-light btn-sm">
-                <i class="fas fa-pencil-alt"></i> Submit Result</a> -->
-        </h4>
-        <h4 class="round-header">Champion</h4>
-    </div>
+    <form class="form" method="POST">
+        <div class="roundHeaders">
+            <h4 class="round-header">Round 16
+                <button class="btn btn-light" type="submit">
+                    <i class="fas fa-edit"></i> Submit Result</button>
+            </h4>
+            <h4 class="round-header">Quarter-Finals
+            </h4>
+            <h4 class="round-header">Semi-Finals
+            </h4>
+            <h4 class="round-header">Finals
+            </h4>
+            <h4 class="round-header">Champion</h4>
+        </div>
+        <div class="t-brackets">
 
-
-    <div class="t-brackets">
-        <ul class="bracket-card bracket-1">
-            <form class="form" method="POST">
+            <ul class="bracket-card bracket-1">
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId">
-
-                        <% if (teams.length> 0){ %>
-                            <%= teams[0].name%>
-                                <% } %>
+                        <%= tournament.team1 %>
                     </p>
                     <p class="score">
                         <input type="number" id="team-score" name="score1" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[0].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[0].score %>>
                         -
                         <input type="number" id="team-score" name="score2" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[1].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[1].score %>>
                     </p>
                     <p class="teamId">
-
-                        <% if (teams.length> 1){ %>
-                            <%= teams[1].name %>
-                                <% } %>
+                        <%= tournament.team2 %>
                     </p>
                 </li>
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId">
-
-                        <% if (teams.length> 2){ %>
-                            <%= teams[2].name %>
-                                <% } %>
+                        <%= tournament.team3 %>
                     </p>
+                    <p class="score">
                     <p class="score">
                         <input type="number" id="team-score" name="score3" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[2].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[2].score %>>
                         -
                         <input type="number" id="team-score" name="score4" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[3].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[3].score %>>
+                    </p>
                     </p>
                     <p class="teamId">
-
-                        <% if (teams.length> 3){ %>
-                            <%= teams[3].name %>
-                                <% } %>
+                        <%= tournament.team4 %>
                     </p>
                 </li>
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId">
-
-                        <% if (teams.length> 4){ %>
-                            <%= teams[4].name %>
-                                <% } %>
+                        <%= tournament.team5 %>
                     </p>
+                    <p class="score">
                     <p class="score">
                         <input type="number" id="team-score" name="score5" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[4].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[4].score %>>
                         -
                         <input type="number" id="team-score" name="score6" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[5].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[5].score %>>
+                    </p>
                     </p>
                     <p class="teamId">
-
-                        <% if (teams.length> 5){ %>
-                            <%= teams[5].name %>
-                                <% } %>
+                        <%= tournament.team6 %>
                     </p>
                 </li>
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId">
-
-                        <% if (teams.length> 6){ %>
-                            <%= teams[6].name %>
-                                <% } %>
+                        <%= tournament.team7 %>
                     </p>
+                    <p class="score">
                     <p class="score">
                         <input type="number" id="team-score" name="score7" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[6].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[6].score %>>
                         -
                         <input type="number" id="team-score" name="score8" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[7].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[7].score %>>
+                    </p>
                     </p>
                     <p class="teamId">
-
-                        <% if (teams.length> 7){ %>
-                            <%= teams[7].name %>
-                                <% } %>
+                        <%= tournament.team8 %>
                     </p>
                 </li>
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId">
-
-                        <% if (teams.length> 8){ %>
-                            <%= teams[8].name %>
-                                <% } %>
+                        <%= tournament.team9 %>
                     </p>
+                    <p class="score">
                     <p class="score">
                         <input type="number" id="team-score" name="score9" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[8].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[8].score %>>
                         -
                         <input type="number" id="team-score" name="score10" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[9].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[9].score %>>
+                    </p>
                     </p>
                     <p class="teamId">
-
-                        <% if (teams.length> 9){ %>
-                            <%= teams[9].name %>
-                                <% } %>
+                        <%= tournament.team10 %>
                     </p>
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId">
-
-                        <% if (teams.length> 10){ %>
-                            <%= teams[10].name %>
-                                <% } %>
+                        <%= tournament.team11 %>
                     </p>
+                    <p class="score">
                     <p class="score">
                         <input type="number" id="team-score" name="score11" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[10].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[10].score %>>
                         -
                         <input type="number" id="team-score" name="score12" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[11].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[11].score %>>
+                    </p>
                     </p>
                     <p class="teamId">
-
-                        <% if (teams.length> 11){ %>
-                            <%= teams[11].name %>
-                                <% } %>
+                        <%= tournament.team12 %>
                     </p>
                 </li>
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId">
-
-                        <% if (teams.length> 12){ %>
-                            <%= teams[12].name %>
-                                <% } %>
+                        <%= tournament.team13 %>
                     </p>
+                    <p class="score">
                     <p class="score">
                         <input type="number" id="team-score" name="score13" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[12].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[12].score %>>
                         -
                         <input type="number" id="team-score" name="score14" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[13].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[13].score %>>
+                    </p>
                     </p>
                     <p class="teamId">
-
-                        <% if (teams.length> 13){ %>
-                            <%= teams[13].name %>
-                                <% } %>
+                        <%= tournament.team14 %>
                     </p>
                 </li>
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId">
-
-                        <% if (teams.length> 14){ %>
-                            <%= teams[14].name %>
-                                <% } %>
+                        <%= tournament.team15 %>
                     </p>
                     <p class="score">
+                    <p class="score">
                         <input type="number" id="team-score" name="score15" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[14].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[14].score %>>
                         -
                         <input type="number" id="team-score" name="score16" min="0" max="99" placeholder="0"
-                            onchange="scoreFunction()" value=<%=teams[15].scoreR16 %>>
+                            onchange="scoreFunction()" value=<%=scores[15].score %>>
+                    </p>
                     </p>
                     <p class="teamId">
-
-                        <% if (teams.length> 15){ %>
-                            <%= teams[15].name %>
-                                <% } %>
+                        <%= tournament.team16 %>
                     </p>
                 </li>
-                <button class="btn btn-light" type="submit">
-                    <i class="fas fa-edit"></i> Submit Result</button>
-            </form>
-        </ul>
-        <ul class="bracket-card bracket-2">
-            <form class="formQF" method="POST">
+
+            </ul>
+            <ul class="bracket-card bracket-2">
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="team1QF">TBA</p>
                     <p class="score">
+                    <p class="score">
                         <input type="number" id="team-score" name="scoreQF1" min="0" max="99" placeholder="0"
-                            onchange="scoreFunctionQF()">
+                            onchange="scoreFunctionQF()" value=<%=scores[16].score %>>
                         -
                         <input type="number" id="team-score" name="scoreQF2" min="0" max="99" placeholder="0"
-                            onchange="scoreFunctionQF()">
+                            onchange="scoreFunctionQF()" value=<%=scores[17].score %>>
                     </p>
                     </p>
                     <p class="teamId" id="team2QF">TBA</p>
@@ -212,11 +168,12 @@
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="team3QF">TBA</p>
                     <p class="score">
+                    <p class="score">
                         <input type="number" id="team-score" name="scoreQF3" min="0" max="99" placeholder="0"
-                            onchange="scoreFunctionQF()">
+                            onchange="scoreFunctionQF()" value=<%=scores[18].score %>>
                         -
                         <input type="number" id="team-score" name="scoreQF4" min="0" max="99" placeholder="0"
-                            onchange="scoreFunctionQF()">
+                            onchange="scoreFunctionQF()" value=<%=scores[19].score %>>
                     </p>
                     </p>
                     <p class="teamId" id="team4QF">TBA</p>
@@ -224,11 +181,12 @@
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="team5QF">TBA</p>
                     <p class="score">
+                    <p class="score">
                         <input type="number" id="team-score" name="scoreQF5" min="0" max="99" placeholder="0"
-                            onchange="scoreFunctionQF()">
+                            onchange="scoreFunctionQF()" value=<%=scores[20].score %>>
                         -
                         <input type="number" id="team-score" name="scoreQF6" min="0" max="99" placeholder="0"
-                            onchange="scoreFunctionQF()">
+                            onchange="scoreFunctionQF()" value=<%=scores[21].score %>>
                     </p>
                     </p>
                     <p class="teamId" id="team6QF">TBA</p>
@@ -236,30 +194,27 @@
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="team7QF">TBA</p>
                     <p class="score">
+                    <p class="score">
                         <input type="number" id="team-score" name="scoreQF7" min="0" max="99" placeholder="0"
-                            onchange="scoreFunctionQF()">
+                            onchange="scoreFunctionQF()" value=<%=scores[22].score %>>
                         -
                         <input type="number" id="team-score" name="scoreQF8" min="0" max="99" placeholder="0"
-                            onchange="scoreFunctionQF()">
+                            onchange="scoreFunctionQF()" value=<%=scores[23].score %>>
                     </p>
                     </p>
                     <p class="teamId" id="team8QF">TBA</p>
                 </li>
-                <button class="btn btn-light" type="submit">
-                    <i class="fas fa-edit"></i> Submit Result</button>
-            </form>
-        </ul>
-        <ul class="bracket-card bracket-3">
-            <form class="formSF" method="POST">
+            </ul>
+            <ul class="bracket-card bracket-3">
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
-
                     <p class="teamId" id="team1SF">TBA</p>
                     <p class="score">
+                    <p class="score">
                         <input type="number" id="team-score" name="scoreSF1" min="0" max="99" placeholder="0"
-                            onchange="scoreFunctionSF()">
+                            onchange="scoreFunctionSF()" value=<%=scores[24].score %>>
                         -
                         <input type="number" id="team-score" name="scoreSF2" min="0" max="99" placeholder="0"
-                            onchange="scoreFunctionSF()">
+                            onchange="scoreFunctionSF()" value=<%=scores[25].score %>>
                     </p>
                     </p>
                     <p class="teamId" id="team2SF">TBA</p>
@@ -267,68 +222,55 @@
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="team3SF">TBA</p>
                     <p class="score">
+                    <p class="score">
                         <input type="number" id="team-score" name="scoreSF3" min="0" max="99" placeholder="0"
-                            onchange="scoreFunctionSF()">
+                            onchange="scoreFunctionSF()" value=<%=scores[26].score %>>
                         -
                         <input type="number" id="team-score" name="scoreSF4" min="0" max="99" placeholder="0"
-                            onchange="scoreFunctionSF()">
+                            onchange="scoreFunctionSF()" value=<%=scores[27].score %>>
                     </p>
                     </p>
                     <p class="teamId" id="team4SF">TBA</p>
                 </li>
-                <button class="btn btn-light" type="submit">
-                    <i class="fas fa-edit"></i> Submit Result</button>
-            </form>
-        </ul>
-        <ul class="bracket-card bracket-4">
-            <form class="formFinal" method="POST">
-
+            </ul>
+            <ul class="bracket-card bracket-4">
                 <li class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="team1Final">TBA</p>
                     <p class="score">
+                    <p class="score">
                         <input type="number" id="team-score" name="scoreFinal1" min="0" max="99" placeholder="0"
-                            onchange="scoreFuntionFinals()">
+                            onchange="scoreFuntionFinals()" value=<%=scores[28].score %>>
                         -
                         <input type="number" id="team-score" name="scoreFinal2" min="0" max="99" placeholder="0"
-                            onchange="scoreFuntionFinals()">
+                            onchange="scoreFuntionFinals()" value=<%=scores[29].score %>>
                     </p>
                     </p>
                     <p class="teamId" id="team2Final">TBA</p>
                 </li>
-                <button class="btn btn-light" type="submit">
-                    <i class="fas fa-edit"></i> Submit Result</button>
-            </form>
-        </ul>
-        <ul class="bracket-card bracket-5">
-            <form action="" class="formChamp">
+            </ul>
+            <ul class="bracket-card bracket-5">
                 <li class="card text-white bg-warning mb-3" style="max-width: 18rem;">
                     <p class="teamId" id="teamWinner">TBA</p>
 
                 </li>
-
-            </form>
-        </ul>
-    </div>
+            </ul>
+        </div>
+    </form>
 </div>
 <script>
-
     var teamsQF = [];
     var teamsSF = [];
     var teamsFinal = [];
     var teamChamp = [];
-
-
     function scoreFunction() {
         teamsQF = [];
-        var team1 = "<%= teams[0].name %>";
-        var team2 = "<%= teams[1].name %>";
+        var team1 = "<%= tournament.team1 %>";
+        var team2 = "<%= tournament.team2 %>";
         var score1 = document.getElementsByName("score1")[0].value;
         var score2 = document.getElementsByName("score2")[0].value;
-
         if (score1 > score2) {
             document.getElementById("team1QF").innerHTML = team1;
             teamsQF[0] = team1;
-
         }
         else if (score2 > score1) {
             document.getElementById("team1QF").innerHTML = team2;
@@ -337,12 +279,10 @@
         else {
             document.getElementById("team1QF").innerHTML = "TBA";
         }
-
-        var team3 = "<%= teams[2].name %>";
-        var team4 = "<%= teams[3].name %>";
+        var team3 = "<%= tournament.team3 %>";
+        var team4 = "<%= tournament.team4 %>";
         var score3 = document.getElementsByName("score3")[0].value;
         var score4 = document.getElementsByName("score4")[0].value;
-
         if (score3 > score4) {
             document.getElementById("team2QF").innerHTML = team3;
             teamsQF[1] = team3;
@@ -354,9 +294,8 @@
         else {
             document.getElementById("team2QF").innerHTML = "TBA";
         }
-
-        var team5 = "<%= teams[4].name %>";
-        var team6 = "<%= teams[5].name %>";
+        var team5 = "<%= tournament.team5 %>";
+        var team6 = "<%= tournament.team6 %>";
         var score5 = document.getElementsByName("score5")[0].value;
         var score6 = document.getElementsByName("score6")[0].value;
         if (score5 > score6) {
@@ -370,9 +309,8 @@
         else {
             document.getElementById("team3QF").innerHTML = "TBA";
         }
-
-        var team7 = "<%= teams[6].name %>";
-        var team8 = "<%= teams[7].name %>";
+        var team7 = "<%= tournament.team7 %>";
+        var team8 = "<%= tournament.team8 %>";
         var score7 = document.getElementsByName("score7")[0].value;
         var score8 = document.getElementsByName("score8")[0].value;
         if (score7 > score8) {
@@ -386,9 +324,8 @@
         else {
             document.getElementById("team4QF").innerHTML = "TBA";
         }
-
-        var team9 = "<%= teams[8].name %>";
-        var team10 = "<%= teams[9].name %>";
+        var team9 = "<%= tournament.team9 %>";
+        var team10 = "<%= tournament.team10 %>";
         var score9 = document.getElementsByName("score9")[0].value;
         var score10 = document.getElementsByName("score10")[0].value;
         if (score9 > score10) {
@@ -402,9 +339,8 @@
         else {
             document.getElementById("team5QF").innerHTML = "TBA";
         }
-
-        var team11 = "<%= teams[10].name %>";
-        var team12 = "<%= teams[11].name %>";
+        var team11 = "<%= tournament.team11 %>";
+        var team12 = "<%= tournament.team12 %>";
         var score11 = document.getElementsByName("score11")[0].value;
         var score12 = document.getElementsByName("score12")[0].value;
         if (score11 > score12) {
@@ -418,9 +354,8 @@
         else {
             document.getElementById("team6QF").innerHTML = "TBA";
         }
-
-        var team13 = "<%= teams[12].name %>";
-        var team14 = "<%= teams[13].name %>";
+        var team13 = "<%= tournament.team13 %>";
+        var team14 = "<%= tournament.team14 %>";
         var score13 = document.getElementsByName("score13")[0].value;
         var score14 = document.getElementsByName("score14")[0].value;
         if (score13 > score14) {
@@ -434,9 +369,8 @@
         else {
             document.getElementById("team7QF").innerHTML = "TBA";
         }
-
-        var team15 = "<%= teams[14].name %>";
-        var team16 = "<%= teams[15].name %>";
+        var team15 = "<%= tournament.team15 %>";
+        var team16 = "<%= tournament.team16 %>";
         var score15 = document.getElementsByName("score15")[0].value;
         var score16 = document.getElementsByName("score16")[0].value;
         if (score15 > score16) {
@@ -451,7 +385,6 @@
             document.getElementById("team8QF").innerHTML = "TBA";
         }
     }
-
     function scoreFunctionQF() {
         teamsSF = [];
         var team1 = teamsQF[0];
@@ -469,7 +402,6 @@
         else {
             document.getElementById("team1SF").innerHTML = "TBA";
         }
-
         var team3 = teamsQF[2];
         var team4 = teamsQF[3];
         var score3 = document.getElementsByName("scoreQF3")[0].value;
@@ -485,7 +417,6 @@
         else {
             document.getElementById("team2SF").innerHTML = "TBA";
         }
-
         var team5 = teamsQF[4];
         var team6 = teamsQF[5];
         var score5 = document.getElementsByName("scoreQF5")[0].value;
@@ -501,7 +432,6 @@
         else {
             document.getElementById("team3SF").innerHTML = "TBA";
         }
-
         var team7 = teamsQF[6];
         var team8 = teamsQF[7];
         var score7 = document.getElementsByName("scoreQF7")[0].value;
@@ -518,7 +448,6 @@
             document.getElementById("team4SF").innerHTML = "TBA";
         }
     }
-
     function scoreFunctionSF() {
         teamsFinal = [];
         var team1 = teamsSF[0];
@@ -532,7 +461,6 @@
         else if (score2 > score1) {
             document.getElementById("team1Final").innerHTML = team2;
             teamsFinal.push(team2);
-
         }
         else {
             document.getElementById("team1Final").innerHTML = "TBA";
@@ -544,21 +472,16 @@
         if (score1 > score2) {
             document.getElementById("team2Final").innerHTML = team3;
             teamsFinal.push(team3);
-
         }
         else if (score2 > score1) {
             document.getElementById("team2Final").innerHTML = team4;
             teamsFinal.push(team4);
-
         }
         else {
             document.getElementById("team2Final").innerHTML = "TBA";
         }
-
         console.log(teamsSF);
-
     }
-
     function scoreFuntionFinals() {
         teamChamp = [];
         var team1 = teamsFinal[0];
@@ -573,6 +496,12 @@
             document.getElementById("teamWinner").innerHTML = team2;
             teamChamp.push(team2);
         }
+        else{
+            document.getElementById("teamWinner").innerHTML = "TBA";
+        }
     }
     window.onload = scoreFunction();
+    window.onload = scoreFunctionQF();
+    window.onload = scoreFunctionSF();
+    window.onload = scoreFuntionFinals();
 </script>
